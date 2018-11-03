@@ -4,6 +4,7 @@ import { hi, awesome } from "./controllers/status.controller";
 // Our Express APP config
 const app = express();
 app.set("port", process.env.PORT || 3000);
+app.set("address", process.env.ADDRESS || 'localhost');
 
 // API Endpoints
 app.get('/', (req, res) => {
