@@ -1,0 +1,23 @@
+{
+  "name": "tomato",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "Ninh Le",
+  "license": "ISC",
+  "scripts": {
+    "watch-ts": "tsc -w",
+    "watch-node": "nodemon dist/server.js",
+    "watch": "concurrently -k -p \"[{name}]\" -n \"TypeScript, Node\" -c \"yello.bold, cyan.bold\" \"yarn run watch-ts\" \"yarn run watch-node\""
+  },
+  "dependencies": {
+    "concurrently": "^3.5.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.16.0",
+    "express": "^4.16.4",
+    "nodemon": "^1.18.5",
+    "tsc": "^1.20150623.0",
+    "typescript": "^3.1.6"
+  }
+}
