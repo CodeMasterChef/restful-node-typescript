@@ -10,8 +10,9 @@
     "watch-ts": "tsc -w",
     "watch-node": "nodemon dist/server.js",
     "watch": "concurrently -k -p \"[{name}]\" -n \"TypeScript, Node\" -c \"yello.bold, cyan.bold\" \"yarn run watch-ts\" \"yarn run watch-node\"",
-    "start" : "node ./dist/server.js",
-    "vps" : "npm install && npm run ts && npm start"
+    "start" : "node server.js",
+    "heroku" : "cp package.json ./dist/package.json && git init && git remote add origin https://git.heroku.com/tomato-expert.git && git add . && git commit -m 'hello' && git push origin master -f",
+    "vps" : "npm install && npm run ts && node ./dist/server.js"
   
   },
   "dependencies": {
