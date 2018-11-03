@@ -11,7 +11,8 @@
     "watch-node": "nodemon dist/server.js",
     "watch": "concurrently -k -p \"[{name}]\" -n \"TypeScript, Node\" -c \"yello.bold, cyan.bold\" \"yarn run watch-ts\" \"yarn run watch-node\"",
     "start" : "node ./dist/server.js",
-    "deploy" : "npm run ts && git push heroku master"
+    "cp" : "cp package.json dist/package.json && cd dist && npm install",
+    "deploy" : "npm run ts && npm run cp && git push heroku master"
   
   },
   "dependencies": {
