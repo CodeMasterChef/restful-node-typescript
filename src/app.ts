@@ -8,7 +8,7 @@ app.set("address", process.env.ADDRESS || 'localhost');
 
 // API Endpoints
 app.get('/', (req, res) => {
-    res.send("Hello world")   
+    res.send("Hello, my friend.")   
 })
 
 app.get('/hi', hi);
