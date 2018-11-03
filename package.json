@@ -11,8 +11,8 @@
     "watch-node": "nodemon ./dist/server.js",
     "watch": "concurrently -k -p \"[{name}]\" -n \"TypeScript, Node\" -c \"yello.bold, cyan.bold\" \"yarn run watch-ts\" \"yarn run watch-node\"",
     "start": "node server.js",
-    "pre-heroku": "heroku config:set ADDRESS=0.0.0.0 --app  tomato-expert",
-    "heroku": "rm -rf dist && npm run ts && cp package.json ./dist/package.json && cd ./dist && git init && git remote add origin https://git.heroku.com/tomato-expert.git && git add . && git commit -m 'hello' && git push origin master -f",
+    "pre-heroku": "heroku config:set ADDRESS=0.0.0.0 --app tomato-expert",
+    "heroku": "rm -rf dist && npm run ts && cp package.json ./dist/package.json && npm run pre-heroku && cd ./dist && git init && git remote add origin https://git.heroku.com/tomato-expert.git && git add . && git commit -m 'hello' && git push origin master -f",
     "vps": "npm install && npm run ts && node ./dist/server.js"
   },
   "dependencies": {
